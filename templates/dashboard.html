@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <meta http-equiv="Cache-Control" content="max-age=31536000, must-revalidate">
+    <link rel="stylesheet" href="{{ url_for('static', path='dashboard.css') }}">
+</head>
+<body>
+    <div class="dashboard">
+        <h1>{{ title }}</h1>
+
+        <!-- Token -->
+        <div class="info">
+            <h3>Token</h3>
+            <pre class="token-box" tabindex="0">{{ token }}</pre>
+            <p class="hint">Click inside and press <b>Ctrl+C</b> to copy</p>
+        </div>
+
+        <!-- User -->
+        <div class="info">
+            <h3>User</h3>
+            <p>{{ decode.sub }}</p>
+        </div>
+
+        <!-- Expiry -->
+        <div class="info">
+            <h3>Expiry</h3>
+            <p>{{ time }}</p>
+        </div>
+    </div>
+</body>
+</html>
