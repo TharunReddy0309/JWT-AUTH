@@ -1,0 +1,57 @@
+/* register.css */
+body {
+    font-family: Verdana, sans-serif;
+    background: #f0f3f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #34495e;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+label {
+    font-weight: bold;
+}
+input {
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+}
+button {
+    background: #2980b9;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+button:hover {
+    background: #1f6691;
+}
+p {
+    margin-top: 15px;
+    text-align: center;
+}
+a {
+    color: #27ae60;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
