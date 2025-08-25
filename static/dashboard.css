@@ -1,0 +1,66 @@
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #eef2f7;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 750px;
+}
+
+/* Title */
+.dashboard h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    color: #2c3e50;
+}
+
+/* Info cards */
+.info {
+    background: #f9fafc;
+    border-left: 5px solid #3498db;
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.info h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    color: #34495e;
+}
+
+/* Token box */
+.token-box {
+    background: #272822;
+    color: #f8f8f2;
+    font-family: monospace;
+    font-size: 0.9rem;
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto;
+    white-space: nowrap;
+    outline: none;
+}
+
+/* Focus highlight when clicked */
+.token-box:focus {
+    box-shadow: 0 0 0 3px #3498db55;
+}
+
+/* Copy hint */
+.hint {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 6px;
+    font-style: italic;
+}
