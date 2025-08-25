@@ -8,7 +8,9 @@ import psycopg2
 import auth
 import psycopg2.extras
 from datetime import timedelta, datetime, timezone
-
+import os
+from dotenv import load_dotenv
+load_dotenv()
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 app.mount(
@@ -18,8 +20,7 @@ app.mount(
 )
 def connect_postgre():
     return psycopg2.connect(
-        'postgresql://neondb_owner:npg_pJMuRjab9C1P@ep-fragrant-shape-a1fmjn84-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
-    )
+        os.getenv("dburl")    )
 
 # --- Database Initialization ---
 def init_db():
