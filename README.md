@@ -1,135 +1,175 @@
-📖 README.md
-# 🔐 FastAPI Authentication System (JWT + PostgreSQL)
+# FastAPI Authentication System (JWT + PostgreSQL)
 
-This project is a simple **authentication system** built with:
-- [FastAPI](https://fastapi.tiangolo.com/) 🚀
-- **PostgreSQL** (user database)
-- **JWT** (JSON Web Tokens) for session management
-- **Passlib (bcrypt)** for secure password hashing
-- **Jinja2 Templates** for frontend rendering
-- **Here is the live link** https://jwt-auth-no4z.onrender.com
----
+A simple authentication system built using:
 
-## ✨ Features
-- ✅ User Registration (username + password, securely hashed)
-- ✅ User Login (with JWT token stored in HTTP-only cookies)
-- ✅ Dashboard (only accessible with a valid token)
-- ✅ Passwords hashed with bcrypt (never stored in plain text)
-- ✅ PostgreSQL as the database backend
+- FastAPI
+- PostgreSQL
+- JWT Authentication
+- Passlib (bcrypt)
+- Jinja2 Templates
+
+### Live Demo
+
+```text
+https://jwt-auth-no4z.onrender.com
+```
 
 ---
 
-## 📂 Project Structure
+# Features
 
+- User Registration
+- Secure Password Hashing with bcrypt
+- JWT-based Authentication
+- HTTP-only Cookie Sessions
+- Protected Dashboard Route
+- PostgreSQL Database Integration
 
+---
+
+# Project Structure
+
+```text
 .
-├── app.py # Main FastAPI app (routes & logic)
-├── auth.py # JWT creation & decoding
-├── cryptn.py # Password hashing/verification
-├── templates/ # HTML templates (Jinja2)
-│ ├── home.html
-│ ├── login.html
-│ ├── register.html
-│ └── dashboard.html
-├── requirements.txt # Dependencies
-└── README.md # Documentation
-
+├── app.py              # Main FastAPI application
+├── auth.py             # JWT creation & verification
+├── cryptn.py           # Password hashing utilities
+├── templates/
+│   ├── home.html
+│   ├── login.html
+│   ├── register.html
+│   └── dashboard.html
+├── requirements.txt
+└── README.md
+```
 
 ---
 
-## ⚙️ Installation & Setup
+# Installation & Setup
 
-### 1️⃣ Clone the Repository
+## 1. Clone Repository
+
 ```bash
 git clone https://github.com/your-username/fastapi-auth.git
 cd fastapi-auth
+```
 
-2️⃣ Create Virtual Environment
+---
+
+## 2. Create Virtual Environment
+
+### Linux / Mac
+
+```bash
 python -m venv venv
-source venv/bin/activate   # Linux / Mac
-venv\Scripts\activate      # Windows
+source venv/bin/activate
+```
 
-3️⃣ Install Dependencies
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+---
+
+## 3. Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-4️⃣ Configure Environment Variables
+---
 
-Create a .env file in the project root:
+## 4. Configure Environment Variables
 
+Create a `.env` file in the project root:
+
+```env
 secret_key=your_secret_key_here
 algo=HS256
 DATABASE_URL=postgresql://username:password@localhost:5432/yourdbname
+```
 
-5️⃣ Initialize Database
+---
 
-Run the app once, it will automatically create the users table in PostgreSQL.
+## 5. Initialize Database
 
-Or manually:
+The app automatically creates the `users` table on startup.
 
+Or create manually:
+
+```sql
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     username TEXT UNIQUE,
     password TEXT
 );
+```
 
-6️⃣ Run the App
+---
+
+## 6. Run the Application
+
+```bash
 uvicorn app:app --reload
+```
 
+---
 
-Visit:
+# Routes
 
-🏠 Home → http://127.0.0.1:8000/
+| Route | Description |
+|---|---|
+| `/` | Home Page |
+| `/register` | User Registration |
+| `/login` | User Login |
+| `/dashboard` | Protected Dashboard |
 
-🔑 Register → http://127.0.0.1:8000/register
+---
 
-🔓 Login → http://127.0.0.1:8000/login
+# Usage Flow
 
-📊 Dashboard → http://127.0.0.1:8000/dashboard
+1. Register a new account  
+2. Login with credentials  
+3. JWT token is stored in HTTP-only cookies  
+4. Access protected dashboard  
+5. Invalid token redirects to login page  
 
-🧑‍💻 Usage Flow
+---
 
-Go to Register Page → create a new account.
+# Requirements
 
-Login with your credentials.
-
-On success, a JWT token is stored in cookies.
-
-Visit the Dashboard → shows user & token expiry info.
-
-Without a valid token → you’ll be redirected back to login.
-
-📦 Requirements
-
-Add this in requirements.txt:
-
+```txt
 fastapi
 uvicorn
 jinja2
 python-jose
 passlib[bcrypt]
 python-dotenv
-psycopg2-binary    # for PostgreSQL
+psycopg2-binary
+```
 
-🔐 Security Notes
+---
 
-Passwords are stored only as bcrypt hashes.
+# Security Features
 
-JWT tokens are stored in HTTP-only cookies (not accessible via JavaScript).
+- Passwords stored as bcrypt hashes
+- JWT stored in HTTP-only cookies
+- Secure token verification
+- PostgreSQL database backend
 
-Make sure to use a strong SECRET_KEY in production.
+---
 
-Always run with HTTPS in production.
+# Future Improvements
 
-📌 Future Improvements
+- Logout functionality
+- Role-based authentication
+- Email verification
+- Docker deployment support
 
-🔄 Add Logout functionality (clear JWT cookie).
+---
 
-🔑 Role-based access (Admin/User).
+# Author
 
-📬 Email verification on signup.
-
-🐳 Docker support for easy deployment.
-
-👨‍💻 Author
-
-Built by Tharun✨
+Built by **Tharun**
