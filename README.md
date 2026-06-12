@@ -8,12 +8,6 @@ A simple authentication system built using:
 - Passlib (bcrypt)
 - Jinja2 Templates
 
-### Live Demo
-
-```text
-https://jwt-auth-no4z.onrender.com
-```
-
 ---
 
 # Features
